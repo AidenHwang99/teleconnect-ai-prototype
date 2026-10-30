@@ -399,3 +399,14 @@ python3 .prototype147/build.py
 | 后台继续客户端会话 | 后台Q&A Log只读来源会话和运行问答 |
 
 下一次迭代应更新本文件的当前规则、验收项和源码索引，并单独记录已失效的设计，避免再次把多轮历史相互矛盾地拼接。
+
+## 16. 本次交付与仓库协作
+
+- 公开仓库：https://github.com/AidenHwang99/teleconnect-ai-prototype
+- 在线预览与下载：https://aidenhwang99.github.io/teleconnect-ai-prototype/
+- 直接体验147：https://aidenhwang99.github.io/teleconnect-ai-prototype/prototype.html
+- 推送指南：仓库`CONTRIBUTING.md`。同事无需加入协作者即可Fork、推送自己的分支并提交PR；直接写原仓库仍需写入权限，当前未添加同事账号。
+- `main/docs`为Pages发布源。合并或推送已构建的产物后自动部署；构建不是由线上工作流替同事执行，应按指南运行`npm run build`。
+- 本次在独立仓库重建147，运行4组针对性检查共60项：红标跳转10项、多AI/详情/流程23项、运行时15项、原能力保留12项。测试使用隔离本地DOM，业务网络请求被禁用，不代表全部生产接入验收。
+- 发布校验检查142–147六份固定HTML、最新入口、累计MD及首页相对链接一致。源码中原146的构建基线哈希继续校验。
+- 完整构建源码与锁定依赖随仓库提交，测试不再依赖维护者机器的临时绝对路径。
