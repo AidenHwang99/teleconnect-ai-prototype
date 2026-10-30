@@ -2601,6 +2601,11 @@ A.categoryEntry147=v=>{
  noticeExtraNav147={q:'',query:'',status:'',origin:'',sla:'',result:'',from:'',to:'',advanced:false};
  view144.open=false;S.client56.menu=false;S.client56.panel63.open=false;S.client56.scheduler68.open=false;
  openNoticeCategory147(scope,category,true);
+ // Rendering may finish loading the local demo ledger. Resolve the target again
+ // against that same final ledger so the displayed count and arrival agree.
+ focusUnread147=categoryUnread147(scope,category)[0]?.id||'';
+ render();
+ if(focusUnread147)requestAnimationFrame(()=>document.querySelector('[data-notice-focus147]')?.scrollIntoView({block:'center',behavior:'smooth'}));
 };
 A.categoryUnreadBadge147=v=>{const[scope,kind]=v.split('|');if(['business','service'].includes(kind))A.categoryEntry147(scope+'|unread-'+kind);};
 const clientBeforeBadge147=clientView56;
