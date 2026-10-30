@@ -1,0 +1,35 @@
+{
+  "current": 147,
+  "artifacts": [
+    {
+      "version": 142,
+      "path": "versions/142.html",
+      "sha256": "d57f3b2a72f2a67edb0fa61177ea4679b0c78819b9df584c7561a853a16bc520"
+    },
+    {
+      "version": 143,
+      "path": "versions/143.html",
+      "sha256": "f8290ba3effde31eecf3218d926ca527ec3096d587e640297fbed3da53831187"
+    },
+    {
+      "version": 144,
+      "path": "versions/144.html",
+      "sha256": "f049eb90b2dc0db9c801733fb8fab639f3757f362386959de7a9587832576baa"
+    },
+    {
+      "version": 145,
+      "path": "versions/145.html",
+      "sha256": "b9be50f87e9fcb0d50d846a3b1f0c6264d832c30fb0844cc5284bea1ce9ad2fc"
+    },
+    {
+      "version": 146,
+      "path": "versions/146.html",
+      "sha256": "f37f62b80068b320c3563624d16142f50313546e0c12dd4ca4ed6a6c37d23fb8"
+    },
+    {
+      "version": 147,
+      "path": "versions/147.html",
+      "sha256": "470ec100e94b60452dca0dd7bcd3ff8ba427aff84924789ae54e8a97520aed2b"
+    }
+  ]
+}
