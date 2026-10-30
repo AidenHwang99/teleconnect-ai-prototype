@@ -1,5 +1,5 @@
 {
-  "current": 148,
+  "current": 149,
   "artifacts": [
     {
       "version": 142,
@@ -35,6 +35,11 @@
       "version": 148,
       "path": "versions/148.html",
       "sha256": "5245a1b3a0c6dbefd02fdc9c77d686c31c5c786d01df005476216a1d92497b8a"
+    },
+    {
+      "version": 149,
+      "path": "versions/149.html",
+      "sha256": "8406bfc1a8f4d2bb42784793b79990a90a51c9f58622fb0308feb73080c40805"
     }
   ]
 }

@@ -1,11 +1,11 @@
 {
   "name": "teleconnect-ai-prototype",
-  "version": "148.0.0",
+  "version": "149.0.0",
   "private": true,
-  "description": "teleConnect 142-148 browser interaction prototype",
+  "description": "teleConnect 142-149 browser interaction prototype",
   "scripts": {
-    "build": "python3 .prototype148/build.py && python3 scripts/build_site.py",
-    "test": "node .prototype147/badge-nav-test.cjs && node .prototype147/flow-review-test.cjs && node .prototype147/review-runtime-test.cjs && node .prototype147/review-preservation-test.cjs && node .prototype148/test.cjs && node .prototype148/preservation-test.cjs && node .prototype148/runtime-test.cjs",
+    "build": "python3 .prototype149/build.py && python3 scripts/build_site.py",
+    "test": "node .prototype147/badge-nav-test.cjs && node .prototype147/flow-review-test.cjs && node .prototype147/review-runtime-test.cjs && node .prototype147/review-preservation-test.cjs && node .prototype148/test.cjs && node .prototype148/preservation-test.cjs && node .prototype148/runtime-test.cjs && node .prototype149/test.cjs && node .prototype149/regression148-test.cjs && node .prototype149/preservation-test.cjs && node .prototype149/runtime-test.cjs",
     "verify": "python3 scripts/verify_site.py"
   },
   "devDependencies": {
