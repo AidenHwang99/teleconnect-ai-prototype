@@ -1,15 +1,16 @@
 # teleConnect AI 主动模式原型
 
-供产品评审、开发协作和交互验收使用。当前版本147，保留142–146作为对照。
+供产品评审、开发协作和交互验收使用。当前版本148，保留142–147作为对照。
 
-- **在线查看**：[打开147原型](https://aidenhwang99.github.io/teleconnect-ai-prototype/prototype.html)
+- **在线查看**：[打开148原型](https://aidenhwang99.github.io/teleconnect-ai-prototype/prototype.html)
 - **版本与下载**：[演示首页](https://aidenhwang99.github.io/teleconnect-ai-prototype/)
+- **148更新说明**：[本轮交互与验收流程](teleConnect_148_更新说明.md)
 - **详细更新说明**：[142→147 TMD](teleConnect_147_TMD_142之后全部更新.md)
 - **同事提交更新**：[协作指南](CONTRIBUTING.md)
 
 ## 快速体验
 
-直接打开在线原型；不需要安装或登录。演示身份不是生产账号。不同浏览器/域名的本地状态独立，可以从左下角“147 · 完整流程演示”和“147 · 演示设置”载入多AI、角色、未读和运行示例。
+直接打开在线原型；不需要安装或登录。演示身份不是生产账号。不同浏览器/域名的本地状态独立，可以从左下角“148 · 本轮交互演示”和“148 · 演示设置”载入多AI、角色、未读和运行示例。
 
 下载单文件HTML后可本地打开；推荐通过HTTP服务体验，避免浏览器对本地文件存储/下载的限制：
 
@@ -21,7 +22,7 @@ python3 -m http.server 8147
 
 ## 源码与构建
 
-147不是手工维护的孤立HTML：它由146固定基线和`.prototype147/`模块生成。请修改相应源码模块并重建，不要只修改生成文件。
+148不是手工维护的孤立HTML：它由147固定基线和`.prototype148/`模块生成。请修改相应源码模块并重建，不要只修改生成文件。
 
 ```sh
 npm ci
@@ -32,7 +33,7 @@ npm run verify
 
 要求Python3及Node.js >=22.12。只查看HTML不需要安装这些工具。`npm test`在隔离DOM内运行，不请求真实业务系统。
 
-`main`分支的`docs/`为GitHub Pages发布目录。提交必须包含重建的HTML、docs产物及相关MD；合并/推送main后GitHub Pages自动更新。固定版本入口在`docs/versions/`，基线142–146不要覆盖。后续新增148时应新增固定文件、更新构建/版本清单和首页，不删除历史版本。
+`main`分支的`docs/`为GitHub Pages发布目录。提交必须包含重建的HTML、docs产物及相关MD；合并/推送main后GitHub Pages自动更新。固定版本入口在`docs/versions/`，基线142–147不要覆盖。后续新增149时应新增固定文件、更新构建/版本清单和首页，不删除历史版本。
 
 ## 能力边界
 
