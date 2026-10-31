@@ -19,7 +19,7 @@ git switch -c update/my-prototype-change
 npm ci
 ```
 
-3. 修改`.prototype154/`中对应JS/CSS模块；修改相关TMD说明。154源模块加载顺序见build.py；不要删除原142功能。
+3. 修改`.prototype155/`中对应JS/CSS模块；修改相关TMD说明。155源模块加载顺序见build.py；不要删除原142功能。
 4. 重新生成并验证：
 
 ```sh
@@ -35,7 +35,7 @@ python3 -m http.server 8147
 ```sh
 git status
 git diff --stat
-git add .prototype154 teleConnect_AI主动模式原型_154.html teleConnect_154_TMD_142之后全部更新.md docs
+git add .prototype155 teleConnect_AI主动模式原型_155.html teleConnect_155_功能与交互说明.md docs
 git commit -m "Improve prototype interaction"
 git push -u origin update/my-prototype-change
 ```
@@ -74,15 +74,15 @@ git push -u origin update/your-change
 ## 3. 只下载/查看
 
 - 页面打开无需GitHub写入权限。
-- 首页“下载154 HTML”得到单文件；“下载全部源码ZIP”得到源模块、文档和历史版本。
-- 当前TMD为开发依据，旧MD及历史归档用于了解演进，不能覆盖当前规则。
+- 首页“下载155 HTML”得到单文件；“下载全部源码ZIP”得到源模块、文档和历史版本。
+- 当前功能说明为开发依据，旧MD及历史归档用于了解演进，不能覆盖当前规则。
 
 ## 4. 发布与版本规则
 
 - 当前由GitHub Pages从main的`/docs`发布；页面生成由提交者在本地运行`npm run build`完成。
 - `npm run verify`检查源码HTML、发布HTML、MD和固定版本清单一致。省略构建可能导致源码已改、在线页面未改。
 - 推送main后，到仓库 **Actions → pages build and deployment** 查看部署；随后打开在线页面刷新验收。不同浏览器有独立的本地已读和演示状态。
-- 新版本例如155须保留154固定版，新增版本源码/HTML并更新脚本、manifest及首页当前入口；不要用“最新版本”覆盖历史文件。
+- 新版本例如156须保留155固定版，新增版本源码/HTML并更新脚本、manifest及首页当前入口；不要用“最新版本”覆盖历史文件。
 - 紧急回退优先 `git revert <commit>` 后正常推送，或回退到已验收产物；不要重写共享历史。
 
 参考：[GitHub Pages发布源设置](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)、[从Fork提交Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)。
