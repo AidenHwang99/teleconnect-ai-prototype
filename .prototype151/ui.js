@@ -38,6 +38,9 @@ clientView56=()=>{const t=el147(clientBefore151()),c=S.client56,thread=t.content
  if(c.run143&&!view144.open&&!c.scheduler68.open){const r=R143.runs.find(x=>x.id===c.run143),intro=thread.querySelector('.cw-task');if(r&&runVisibleAudit147(r)&&intro){const service=R143.services.find(x=>x.id===r.serviceId),snap=r.snapshot||{};intro.className='cw-task run-service151';intro.innerHTML=`<div class="service-heading151"><h3>${esc(r.title)}</h3>${badges143(r.status)}</div><div class="service-meta151">${ic('clock',14)}<span>${esc(r.id)} · ${esc(r.trigger||'主动服务')} · ${stamp143(r.createdAt)}</span></div><p>${esc(r.result||r.phase143||snap.instruction||service?.instruction||'正在按执行计划处理授权范围内的信息。')}</p><div class="run-actions151">${btn143('任务详情','run143',r.id,true)}</div><p class="r143-note">在此追问不会重新运行任务。</p>`;intro.querySelectorAll('.run-actions151 button').forEach(b=>b.classList.add('cw-btn',b.dataset.a==='run143'&&b.textContent==='任务详情'?'cw-primary':'cw-secondary'));}}
  return t.innerHTML;
 };
+// Read-state rendering can replace the original smooth-scroll target; focus the final DOM.
+const jumpBefore151=A.coJump147;
+A.coJump147=id=>{const out=jumpBefore151(id),focus=S.client56.coFocus147,session=S.client56.session147;requestAnimationFrame(()=>{if(S.client56.session147!==session||S.client56.coFocus147!==focus)return;const target=[...document.querySelectorAll('[data-co-run147]')].find(n=>n.dataset.coRun147===focus);target?.scrollIntoView?.({block:'start',behavior:'auto'});});return out;};
 // An explicit conversational example demonstrates multiple turns without fabricating past chats.
 A.dialogueDemo151=()=>{
  const ai=roleAIs147().find(b=>b.id==='data')||roleAIs147()[0];if(!ai)return toast('当前没有可用 AI');

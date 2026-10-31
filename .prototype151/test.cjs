@@ -28,5 +28,7 @@ ok('html151.content.querySelectorAll(".run-card151").length===2','two conversati
 ok('[...html151.content.querySelectorAll(".run-card151>h3")].every(n=>n.textContent==="协作进度")','user question is not repeated as task title');
 ok('html151.content.querySelectorAll(".prompts151").length===1&&html151.content.querySelector(".tc-thread").lastElementChild.classList.contains("prompts151")','one recommendation row at bottom');
 ok('!html151.content.querySelector("button button")','no nested action buttons');
+run('let scroll151=null;window.requestAnimationFrame=fn=>{fn();return 0;};window.HTMLElement.prototype.scrollIntoView=function(o){scroll151={id:this.dataset.coRun147,block:o.block,behavior:o.behavior};};const completed151=C147.runs.find(r=>r.sessionId===chat151.id&&r.state==="completed");A.coJump147(completed151.id);');
+ok('scroll151.id===completed151.id&&scroll151.block==="start"&&scroll151.behavior==="auto"','read-render navigation focuses exact final execution card');
 run('const own151=chat151.id;CH.user143("demo_2");');ok('!visibleSession147(session147(own151))','conversation example stays private per identity');
 console.log(JSON.stringify({passed:checks.length,checks},null,2));w.close();})().catch(e=>{console.error(e);process.exit(1)});
