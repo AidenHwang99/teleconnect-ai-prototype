@@ -1,0 +1,27 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),{boot}=require('./runtime.cjs');
+(async()=>{const{run,w}=await boot();if(!run('typeof completedLedger147!=="undefined"'))run(fs.readFileSync('.prototype147/review-runtime.js','utf8'));if(!run('CH.user143.reviewRuntime147===2'))run(fs.readFileSync('.prototype147/review-runtime.js','utf8').split('// Hidden floating contexts')[1].replace(/^.*?\n/,'') );let checks=0;const check=s=>{assert.equal(run(s),true,s);checks++};
+run('S.app="client";CH.user143("u_chang");var t=S.client56.tasks.find(t=>t.owner?.id===user143()&&t.status!=="done");t.status="processing";collectBusiness144();t.status="done";collectBusiness144();openInbox147("completed","");var event1=R143.businessResults144.find(r=>r.taskId144===t.id);');
+check('doneRows147().filter(r=>r.unread).length===unreadDone143().length');
+run('t.status="processing";collectBusiness144()');
+check('doneRows147().some(r=>r.id===event1.id)&&doneRows147().filter(r=>r.unread).length===unreadDone143().length');
+// A second immutable completion for the same reopened task must be a second row, not collapsed.
+run('var event2={...event1,id:event1.id+"-SECOND",createdAt:event1.createdAt+1000,completionRead143:false,result:"第二次完成结果"};R143.businessResults144.unshift(event2);');
+check('doneRows147().filter(r=>r.raw.taskId144===t.id).length===2&&unreadDone143().filter(r=>r.taskId144===t.id).length===2');
+check(`(()=>{const n=completionRows148().filter(r=>!r.read).length;panel151().expanded=true;return completionRows148().filter(r=>!r.read).length===n&&!!el147(completionPanel148()).content.querySelector(".execution-list151");})()`);
+run('A.taskOpen144("result147:"+event1.id)');
+check('S.modal.type==="resultEvent147"&&event1.completionRead143&&!event2.completionRead143');
+run('A.resultTask147(event1.id)');check('S.modal.type==="task144"&&!event2.completionRead143');
+run('var ss=createSession147("oss","会话历史读取");var rr1=createRun147(ss,"第一项","第一项结果"),rr2=createRun147(ss,"第二项","第二项结果");complete147(rr1);complete147(rr2);A.coJump147(ss.id);');
+check('S.client56.session147===ss.id&&rr2.completionRead143&&!rr1.completionRead143');
+run('A.results144("oss");var coUnread=doneRows147().filter(r=>r.raw.sessionId&&r.unread);');check('coUnread.some(r=>r.id===rr1.id)&&!coUnread.some(r=>r.id===rr2.id)');
+run('CH.user143("demo_1")');check('!completedLedger147().some(r=>r.id===event1.id||r.id===rr1.id)');
+run('CH.user143("u_admin");A.tcConversation56("oss");var os=createSession147("oss","浮窗 OSS");var or=createRun147(os,"浮窗 OSS","OSS 结果");A.coJump147(or.id);A.floatOpen85("oss");A.floatOpen85("data");var windowsBefore=S.float85.windows.length;A.coJump147(or.id);');
+check('S.float85.open&&S.float85.active==="oss"&&S.client56.session147===os.id&&S.float85.windows.length===windowsBefore');
+run('A.floatMain85();CH.user143("u_chang")');
+check('user143()==="u_chang"&&!S.float85.open&&S.float85.windows.length===0');
+run('A.floatOpen85("oss")');check('user143()==="u_chang"&&S.float85.windows.every(w=>w.context.user==="u_chang")');
+run('CH.user143("u_admin")');check('user143()==="u_admin"&&!S.float85.open&&S.float85.windows.length===0');
+run('A.tcConversation56("oss");A.floatOpen85("oss");S.client56.input="OSS 浮窗草稿";UPLOADS88.set(uploadKey88(),[{id:"float-oss-file",name:"oss.txt"}]);A.floatOpen85("data");S.client56.input="Data 浮窗草稿";UPLOADS88.set(uploadKey88(),[{id:"float-data-file",name:"data.txt"}]);CH.user143("u_chang");CH.user143("u_admin");A.floatOpen85("oss")');
+check('S.client56.input==="OSS 浮窗草稿"&&UPLOADS88.get(uploadKey88())[0].id==="float-oss-file"');
+run('A.floatOpen85("data")');check('S.client56.input==="Data 浮窗草稿"&&UPLOADS88.get(uploadKey88())[0].id==="float-data-file"');
+console.log(JSON.stringify({review_runtime_checks:checks,passed:true}));w.close();})().catch(e=>{console.error(e);process.exit(1)});
