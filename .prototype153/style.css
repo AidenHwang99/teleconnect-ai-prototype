@@ -1,0 +1,9 @@
+/* Conversational progress is a text block, not a business card. */
+.conversation-stream151 .execution-text153{align-self:flex-start;width:100%;max-width:100%;margin:4px 0 24px;padding:8px 4px;border:0;background:transparent;box-shadow:none;color:#213747;scroll-margin-top:20px}
+.process153>summary{display:flex;gap:9px;align-items:center;cursor:pointer;color:#7a897a;font-size:13px;padding:10px 0;list-style:none}
+.process153>summary:after{content:'⌄';margin-left:8px}.process153[open]>summary:after{content:'⌃'}
+.process153 ol{margin:8px 0;padding:8px 24px;border-left:2px solid #e5ebdf}.process153 li{padding:6px 0;font-size:13px}.process153 li small{margin-left:12px;color:#8a9980}
+.execution-tools153{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.execution-answer153 p{font-size:14px;line-height:1.9;margin:12px 0 18px}
+.artifact153{display:flex;align-items:center;gap:12px;max-width:100%;width:380px;padding:16px;border:1px solid #dfe6d8;border-radius:12px;background:white;text-align:left;cursor:pointer;color:#40543e}.artifact153 span{flex:1}.artifact153 small{display:block;color:#8a9784;font-size:11px;margin-top:6px}.artifact153:hover{border-color:#93bd56;background:#f9fcf6}
+.chart153>div{display:flex;align-items:center;gap:12px;margin:14px 0}.chart153 i{display:block;height:20px;background:#8dc641;border-radius:4px}.chart153 figcaption{font-size:12px;color:#7c8a78}
+.new153{display:flex;align-items:center;gap:6px;font-size:11px;color:#3189d5;margin-bottom:12px}.new153 i{width:6px;height:6px;background:#328de7;border-radius:50%}.unread153{scroll-margin-top:10px}.create-options153{display:flex;gap:16px;padding:20px 0}.cw-heading>[data-a=templates153],.cw-heading>[data-a=services153]{white-space:nowrap;margin-left:8px}

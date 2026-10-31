@@ -1,0 +1,32 @@
+const assert=require('assert');const {boot}=require('./runtime.cjs');
+(async()=>{const {run,w}=await boot();let checks=[];function ok(expr,label){assert(run(expr),label);checks.push(label)}
+run('A.tcConversation56("oss");A.dialogueDemo151();');
+ok('ownedRuns147().filter(r=>r.demo153).length===2','one complete and one active demo');
+ok('!document.querySelector(".conversation-stream151 .v147-run")','large run card removed');
+ok('document.querySelectorAll(".process153").length===2&&!document.querySelector(".process153[open]")','execution narrative collapsed');
+ok('document.querySelector(".execution-answer153").textContent.includes("LOS")&&!document.querySelector(".execution-answer153").textContent.includes("收入")','OSS summary matches domain');
+ok('!!document.querySelector(".artifact153")','completion artifact available');
+run('const demo153=ownedRuns147().find(r=>r.demo153&&r.state==="completed");A.artifact153(demo153.id);');
+ok('document.querySelector("#modal").textContent.includes("接入光路排查报告")','report opens');
+ok('report153(demo153).includes("修复验证")','download content has evidence checklist');
+run('A.dialogueDemo151();');ok('ownedRuns147().filter(r=>r.demo153).length===2','repeated demo does not duplicate');
+run('A.categoryEntry147("oss|business");');
+ok('view144.size>=5&&![...document.querySelectorAll("[aria-label=每页任务数] option")].some(o=>o.value==="2")','business minimum five');
+ok('!!document.querySelector(".unread153 .new153")','unread visible on row');
+run('const receipt153=document.querySelector(".unread153").dataset.receipt153;const total153=new Set(categoryUnread147("oss","business").map(receiptKey153)).size;consumeReceipt153(receipt153);');
+ok('new Set(categoryUnread147("oss","business").map(receiptKey153)).size===total153-1','reading one row removes one item count');
+ok('receiptNotices153(receipt153).length===0','all associated unread events consumed');
+run('A.categoryEntry147("oss|service");A.scheduleNew68();');ok('S.modal.type==="create153"||S.modal.name==="create153"','creation chooser opens');
+run('A.templates153();');ok('!!document.querySelector("[data-a=scheduleTemplate68]")','template catalog populated');
+ok('!document.querySelector("[data-ch=serviceViewClean147]")','no template category filter');
+ok('document.querySelectorAll("[data-a=scheduleTemplate68]").length>=5','catalog at least five per page');
+run('const template153=document.querySelector("[data-a=scheduleTemplate68]").dataset.v;A.scheduleTemplate68(template153);');ok('!!S.client56.scheduler68.edit','template opens editable creation');run('S.client56.scheduler68.edit.d.name="153 测试服务";S.client56.scheduler68.edit.d.instruction="核查153唯一演示范围并整理结果";A.scheduleSave68();');ok('!S.client56.scheduler68.edit&&S.client56.scheduler68.view70==="all"','saved template service returns to service list context');
+run('S.client56.scheduler68.edit=null;A.templates153();A.services153();');ok('S.client56.scheduler68.view70==="all"&&!!document.querySelector("[data-a=templates153]")','catalog returns to list');
+run('CH.user143("u_admin");');
+for(const ai of ['data','teleconnect']){run(`A.tcConversation56('${ai}');A.dialogueDemo151();`);ok(`ownedRuns147().some(r=>r.demo153&&r.ai==='${ai}')`,ai+' cowork sample');ok(`document.querySelector('.execution-answer153').textContent.includes('${ai==='data'?'收入':'会议'}')`,ai+' domain summary');run(`A.categoryEntry147('${ai}|service');`);ok('!!document.querySelector("[data-a=scheduleNew68]")',ai+' common create entry');run('A.templates153();');ok('!!document.querySelector("[data-a=scheduleTemplate68]")',ai+' domain templates');run('A.services153();')}
+run('A.categoryEntry147("oss|business");let visibleTimer153;window.setTimeout=(cb,ms)=>{if(ms===1500)visibleTimer153=cb;return 1;};let io153;window.IntersectionObserver=class{constructor(cb){io153=cb}observe(){}disconnect(){}};render();let unreadNode153=document.querySelector(".unread153");let unreadKey153=unreadNode153.dataset.receipt153;io153([{target:unreadNode153,isIntersecting:true,intersectionRatio:.7}]);');
+ok('receiptNotices153(unreadKey153).length>0','visibility alone does not instantly clear');
+run('visibleTimer153();');ok('receiptNotices153(unreadKey153).length===0','visible dwell consumes only corresponding item');
+run('for(const n of [...unifiedUnread147("oss")])readNotice153(n);render();');ok('!document.querySelector(".badge147-unread[data-v=\\"oss|business\\"]")','badge disappears at zero');
+run('let raw153=ownedBefore153();let fixture153=raw153.find(r=>r.demo153&&r.state==="completed");for(let i=0;i<3;i++)C147.runs.push({...fixture153,id:fixture153.id+"-repeat"+i,updatedAt:Date.now()+i});');ok('ownedRuns147().filter(r=>r.ai===fixture153.ai&&r.state==="completed"&&(r.demo148||r.demo151||r.demo153)).length===2','completed fixture repetitions compact to two');run('A.demoHistory153();');ok('ownedRuns147().length===ownedBefore153().length','all historical fixtures can be restored without loss');
+console.log(JSON.stringify({passed:checks.length,checks},null,2));w.close()})().catch(e=>{console.error(e);process.exit(1)});
